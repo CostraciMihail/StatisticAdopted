@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470B6B621D2FF5340003880F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470B6B611D2FF5340003880F /* LoginViewController.m */; };
 		47F36E8F1D2FE4B50036B950 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F36E8E1D2FE4B50036B950 /* main.m */; };
 		47F36E921D2FE4B50036B950 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F36E911D2FE4B50036B950 /* AppDelegate.m */; };
-		47F36E951D2FE4B50036B950 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F36E941D2FE4B50036B950 /* ViewController.m */; };
+		47F36E951D2FE4B50036B950 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F36E941D2FE4B50036B950 /* MainViewController.m */; };
 		47F36E981D2FE4B50036B950 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F36E961D2FE4B50036B950 /* Main.storyboard */; };
 		47F36E9A1D2FE4B50036B950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F36E991D2FE4B50036B950 /* Assets.xcassets */; };
 		47F36E9D1D2FE4B50036B950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F36E9B1D2FE4B50036B950 /* LaunchScreen.storyboard */; };
@@ -41,12 +42,14 @@
 		0377C467E1BAC4A146394D3F /* Pods-StatisticAdopted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatisticAdopted.release.xcconfig"; path = "Pods/Target Support Files/Pods-StatisticAdopted/Pods-StatisticAdopted.release.xcconfig"; sourceTree = "<group>"; };
 		36EC9D66A34812AD6254633C /* libPods-StatisticAdopted.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StatisticAdopted.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4177AF2B1A1AFB7CE2956DB8 /* Pods-StatisticAdoptedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatisticAdoptedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StatisticAdoptedUITests/Pods-StatisticAdoptedUITests.release.xcconfig"; sourceTree = "<group>"; };
+		470B6B601D2FF5340003880F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		470B6B611D2FF5340003880F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		47F36E8A1D2FE4B50036B950 /* StatisticAdopted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatisticAdopted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F36E8E1D2FE4B50036B950 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47F36E901D2FE4B50036B950 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47F36E911D2FE4B50036B950 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		47F36E931D2FE4B50036B950 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		47F36E941D2FE4B50036B950 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		47F36E931D2FE4B50036B950 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		47F36E941D2FE4B50036B950 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		47F36E971D2FE4B50036B950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47F36E991D2FE4B50036B950 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47F36E9C1D2FE4B50036B950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,8 +133,10 @@
 			children = (
 				47F36E901D2FE4B50036B950 /* AppDelegate.h */,
 				47F36E911D2FE4B50036B950 /* AppDelegate.m */,
-				47F36E931D2FE4B50036B950 /* ViewController.h */,
-				47F36E941D2FE4B50036B950 /* ViewController.m */,
+				47F36E931D2FE4B50036B950 /* MainViewController.h */,
+				47F36E941D2FE4B50036B950 /* MainViewController.m */,
+				470B6B601D2FF5340003880F /* LoginViewController.h */,
+				470B6B611D2FF5340003880F /* LoginViewController.m */,
 				47F36E961D2FE4B50036B950 /* Main.storyboard */,
 				47F36E991D2FE4B50036B950 /* Assets.xcassets */,
 				47F36E9B1D2FE4B50036B950 /* LaunchScreen.storyboard */,
@@ -442,7 +447,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47F36E951D2FE4B50036B950 /* ViewController.m in Sources */,
+				470B6B621D2FF5340003880F /* LoginViewController.m in Sources */,
+				47F36E951D2FE4B50036B950 /* MainViewController.m in Sources */,
 				47F36E921D2FE4B50036B950 /* AppDelegate.m in Sources */,
 				47F36E8F1D2FE4B50036B950 /* main.m in Sources */,
 			);
