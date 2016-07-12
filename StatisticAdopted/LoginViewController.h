@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STABaseViewController.h"
 
-@interface LoginViewController : UIViewController<UIScrollViewDelegate>
+
+@interface LoginViewController : STABaseViewController<UIScrollViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;

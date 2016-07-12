@@ -15,4 +15,8 @@
  successBlock:(SuccessBlock)succesBlock
     failBlock: (FailureBlock)failBlock;
 
+- (void)logOut:(NSDictionary *)parameters
+  successBlock:(SuccessBlock)succesBlock
+     failBlock: (FailureBlock)failBlock;
+
 @end

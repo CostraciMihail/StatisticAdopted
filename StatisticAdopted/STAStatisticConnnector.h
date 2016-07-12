@@ -1,13 +1,13 @@
 //
-//  STSimplConnnector.m
+//  STAStatisticConnnector.h
 //  StatisticAdopted
 //
 //  Created by winify on 7/12/16.
 //  Copyright © 2016 winify. All rights reserved.
 //
 
-#import "STSimplConnnector.h"
+#import "STABaseConnector.h"
 
-@implementation STSimplConnnector
+@interface STAStatisticConnnector : STABaseConnector
 
 @end

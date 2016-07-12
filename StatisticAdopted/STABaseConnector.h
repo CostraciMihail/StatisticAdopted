@@ -32,4 +32,7 @@ typedef void (^FailureBlock)(id object);
               succesBlock:(SuccessBlock)successBlock
              failuerBlock:(FailureBlock)failureBlock;
 
+- (NSString *)buildUrl:(NSString *)string;
+
+
 @end

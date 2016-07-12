@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "STAUserConnector.h"
+#import "MainViewController.h"
+
 
 @interface LoginViewController ()
 
@@ -31,7 +33,6 @@
 }
 
 
-
 - (IBAction)loginButtonTouched:(id)sender {
     
 //    {@"username" : self.userNameTextField.text,
@@ -42,12 +43,15 @@
     [userConnector logIn:@{@"username" : @"mcostraci",
                            @"password" : self.passwordTextField.text}
             successBlock:^(id object) {
-    
+                
+                MainViewController *mainVC = [self.mainStoryBoard instantiateViewControllerWithIdentifier:@"MainViewControllerID"];
+                
+                [self.navigationController pushViewController:mainVC animated:YES];
                 
             }
             failBlock:^(id object) {
-                   
-                   
+                
+            
                }];
     
     

@@ -1,5 +1,5 @@
 //
-//  STSimplConnnector.h
+//  STABaseViewController.h
 //  StatisticAdopted
 //
 //  Created by winify on 7/12/16.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AFNetworking/AFNetworking.h>
 
-@interface STSimplConnnector : AFHTTPRequestOperationManager
+@interface STABaseViewController : UIViewController
+
+@property(nonatomic, strong) UIStoryboard *mainStoryBoard;
 
 @end

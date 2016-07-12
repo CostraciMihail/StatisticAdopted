@@ -97,6 +97,8 @@
     
     
     if (!error) {
+        
+        NSLog(@"Success");
         successBlock(dic);
     }
     
@@ -105,8 +107,6 @@
         failureBlock(error);
     };
     
-        
-
 }
 
 - (void)validateObject:(BaseServerResponse*)responseObject
@@ -120,10 +120,9 @@
         else { fail([responseObject errorObject]); }
         
     } else { fail([responseObject errorObject]); }
-    
 }
 
-- (NSString *)buildUrl: (NSString *)string {
+- (NSString *)buildUrl:(NSString *)string {
     
     NSString *url = [NSString stringWithFormat:@"%@%@", HOST_NAME , string];
     [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

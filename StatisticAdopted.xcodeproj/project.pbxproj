@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470318771D35507E0001A42A /* STABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470318761D35507E0001A42A /* STABaseViewController.m */; };
+		4703187D1D3553ED0001A42A /* STAStatisticConnnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4703187C1D3553ED0001A42A /* STAStatisticConnnector.m */; };
 		470B6B621D2FF5340003880F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470B6B611D2FF5340003880F /* LoginViewController.m */; };
 		4736609B1D35151400B7236C /* BaseServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 473660921D35151400B7236C /* BaseServerResponse.m */; };
 		4736609C1D35151400B7236C /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 473660941D35151400B7236C /* ErrorHandler.m */; };
 		4736609F1D35151400B7236C /* STAUserDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4736609A1D35151400B7236C /* STAUserDTO.m */; };
-		47402F791D3523C300A32FF1 /* STSimplConnnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47402F781D3523C300A32FF1 /* STSimplConnnector.m */; };
 		478A2C971D352BAB009F007A /* STABaseConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 478A2C951D352BAB009F007A /* STABaseConnector.m */; };
 		478A2C981D352BAB009F007A /* STAUserConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 478A2C961D352BAB009F007A /* STAUserConnector.m */; };
 		47F36E8F1D2FE4B50036B950 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F36E8E1D2FE4B50036B950 /* main.m */; };
@@ -44,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		0377C467E1BAC4A146394D3F /* Pods-StatisticAdopted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatisticAdopted.release.xcconfig"; path = "Pods/Target Support Files/Pods-StatisticAdopted/Pods-StatisticAdopted.release.xcconfig"; sourceTree = "<group>"; };
+		470318751D35507E0001A42A /* STABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STABaseViewController.h; sourceTree = "<group>"; };
+		470318761D35507E0001A42A /* STABaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STABaseViewController.m; sourceTree = "<group>"; };
+		4703187B1D3553ED0001A42A /* STAStatisticConnnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAStatisticConnnector.h; sourceTree = "<group>"; };
+		4703187C1D3553ED0001A42A /* STAStatisticConnnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAStatisticConnnector.m; sourceTree = "<group>"; };
 		470B6B601D2FF5340003880F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		470B6B611D2FF5340003880F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		473660911D35151400B7236C /* BaseServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseServerResponse.h; sourceTree = "<group>"; };
@@ -52,8 +57,6 @@
 		473660941D35151400B7236C /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandler.m; sourceTree = "<group>"; };
 		473660991D35151400B7236C /* STAUserDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAUserDTO.h; sourceTree = "<group>"; };
 		4736609A1D35151400B7236C /* STAUserDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAUserDTO.m; sourceTree = "<group>"; };
-		47402F771D3523C300A32FF1 /* STSimplConnnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSimplConnnector.h; sourceTree = "<group>"; };
-		47402F781D3523C300A32FF1 /* STSimplConnnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSimplConnnector.m; sourceTree = "<group>"; };
 		47402F7A1D3525C700A32FF1 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		478A2C931D352BAB009F007A /* STAUserConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAUserConnector.h; sourceTree = "<group>"; };
 		478A2C941D352BAB009F007A /* STABaseConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STABaseConnector.h; sourceTree = "<group>"; };
@@ -118,6 +121,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		470318781D35509B0001A42A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				470318751D35507E0001A42A /* STABaseViewController.h */,
+				470318761D35507E0001A42A /* STABaseViewController.m */,
+				470B6B601D2FF5340003880F /* LoginViewController.h */,
+				470B6B611D2FF5340003880F /* LoginViewController.m */,
+				47F36E931D2FE4B50036B950 /* MainViewController.h */,
+				47F36E941D2FE4B50036B950 /* MainViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		470318791D3550AA0001A42A /* Connectors */ = {
+			isa = PBXGroup;
+			children = (
+				478A2C941D352BAB009F007A /* STABaseConnector.h */,
+				478A2C951D352BAB009F007A /* STABaseConnector.m */,
+				478A2C931D352BAB009F007A /* STAUserConnector.h */,
+				478A2C961D352BAB009F007A /* STAUserConnector.m */,
+				4703187B1D3553ED0001A42A /* STAStatisticConnnector.h */,
+				4703187C1D3553ED0001A42A /* STAStatisticConnnector.m */,
+				473660911D35151400B7236C /* BaseServerResponse.h */,
+				473660921D35151400B7236C /* BaseServerResponse.m */,
+				473660931D35151400B7236C /* ErrorHandler.h */,
+				473660941D35151400B7236C /* ErrorHandler.m */,
+			);
+			name = Connectors;
+			sourceTree = "<group>";
+		};
+		4703187A1D3550B30001A42A /* DTO's */ = {
+			isa = PBXGroup;
+			children = (
+				473660991D35151400B7236C /* STAUserDTO.h */,
+				4736609A1D35151400B7236C /* STAUserDTO.m */,
+			);
+			name = "DTO's";
+			sourceTree = "<group>";
+		};
 		47F36E811D2FE4B50036B950 = {
 			isa = PBXGroup;
 			children = (
@@ -145,22 +187,9 @@
 			children = (
 				47F36E901D2FE4B50036B950 /* AppDelegate.h */,
 				47F36E911D2FE4B50036B950 /* AppDelegate.m */,
-				47F36E931D2FE4B50036B950 /* MainViewController.h */,
-				478A2C931D352BAB009F007A /* STAUserConnector.h */,
-				478A2C941D352BAB009F007A /* STABaseConnector.h */,
-				478A2C951D352BAB009F007A /* STABaseConnector.m */,
-				478A2C961D352BAB009F007A /* STAUserConnector.m */,
-				47F36E941D2FE4B50036B950 /* MainViewController.m */,
-				47402F771D3523C300A32FF1 /* STSimplConnnector.h */,
-				47402F781D3523C300A32FF1 /* STSimplConnnector.m */,
-				470B6B601D2FF5340003880F /* LoginViewController.h */,
-				470B6B611D2FF5340003880F /* LoginViewController.m */,
-				473660911D35151400B7236C /* BaseServerResponse.h */,
-				473660921D35151400B7236C /* BaseServerResponse.m */,
-				473660931D35151400B7236C /* ErrorHandler.h */,
-				473660941D35151400B7236C /* ErrorHandler.m */,
-				473660991D35151400B7236C /* STAUserDTO.h */,
-				4736609A1D35151400B7236C /* STAUserDTO.m */,
+				470318781D35509B0001A42A /* Controllers */,
+				470318791D3550AA0001A42A /* Connectors */,
+				4703187A1D3550B30001A42A /* DTO's */,
 				47F36E961D2FE4B50036B950 /* Main.storyboard */,
 				47F36E991D2FE4B50036B950 /* Assets.xcassets */,
 				47F36E9B1D2FE4B50036B950 /* LaunchScreen.storyboard */,
@@ -390,11 +419,12 @@
 				4736609B1D35151400B7236C /* BaseServerResponse.m in Sources */,
 				4736609F1D35151400B7236C /* STAUserDTO.m in Sources */,
 				470B6B621D2FF5340003880F /* LoginViewController.m in Sources */,
+				4703187D1D3553ED0001A42A /* STAStatisticConnnector.m in Sources */,
 				478A2C981D352BAB009F007A /* STAUserConnector.m in Sources */,
-				47402F791D3523C300A32FF1 /* STSimplConnnector.m in Sources */,
 				47F36E951D2FE4B50036B950 /* MainViewController.m in Sources */,
 				4736609C1D35151400B7236C /* ErrorHandler.m in Sources */,
 				47F36E921D2FE4B50036B950 /* AppDelegate.m in Sources */,
+				470318771D35507E0001A42A /* STABaseViewController.m in Sources */,
 				47F36E8F1D2FE4B50036B950 /* main.m in Sources */,
 				478A2C971D352BAB009F007A /* STABaseConnector.m in Sources */,
 			);
