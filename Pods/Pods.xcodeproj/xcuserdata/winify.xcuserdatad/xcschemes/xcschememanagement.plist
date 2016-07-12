@@ -9,22 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Mantle.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-StatisticAdopted.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-StatisticAdoptedTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-StatisticAdoptedUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,22 +22,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>426BC4549A625B5E1E4200D5261A98BF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7FD9764DC608460A9DDA886B8ADCB2B2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A8D5E23D05C994C6C01A2BE66EB06E77</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B19D7E1DAE32ADEC8B8BD40BD75C4712</key>
+		<key>F65D3E154B8995E57F09FF1D0406D4C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
