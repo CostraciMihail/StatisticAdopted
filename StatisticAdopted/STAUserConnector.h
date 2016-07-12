@@ -10,4 +10,9 @@
 
 @interface STAUserConnector : STABaseConnector
 
+
+- (void)logIn:(NSDictionary *)parameters
+ successBlock:(SuccessBlock)succesBlock
+    failBlock: (FailureBlock)failBlock;
+
 @end

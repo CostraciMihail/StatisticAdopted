@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "STAUserConnector.h"
 
 @interface LoginViewController ()
 
@@ -25,11 +26,29 @@
     self.scrollView.showsVerticalScrollIndicator = YES;
     self.scrollView.showsHorizontalScrollIndicator = YES;
     
+    self.userNameTextField.text = @"mcostraci";
+    
 }
 
 
 
 - (IBAction)loginButtonTouched:(id)sender {
+    
+//    {@"username" : self.userNameTextField.text,
+//        @"password" : self.passwordTextField.text}
+    
+    
+    STAUserConnector *userConnector = [STAUserConnector new];
+    [userConnector logIn:@{@"username" : @"mcostraci",
+                           @"password" : self.passwordTextField.text}
+            successBlock:^(id object) {
+    
+                
+            }
+            failBlock:^(id object) {
+                   
+                   
+               }];
     
     
 }

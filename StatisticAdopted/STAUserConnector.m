@@ -10,4 +10,27 @@
 
 @implementation STAUserConnector
 
+
+- (void)logIn:(NSDictionary *)parameters
+ successBlock:(SuccessBlock)succesBlock
+    failBlock: (FailureBlock)failBlock
+{
+
+    [self requestForService:@"/login"
+             withParameters:parameters
+                     method:REQUEST_METHOD_POST
+                succesBlock:^(id object) {
+                   
+
+                    
+                }
+               failuerBlock:^(id object) {
+                   
+                   
+               }];
+    
+}
+
+
+
 @end

@@ -34,6 +34,9 @@
             parameters:parameters
             success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 
+                NSString *str = [[NSString alloc] initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding];
+                NSLog(@"%@", str);
+                
                 [self processRespondObject:responseObject
                                succesBlock:successBlock
                               failuerBlock:successBlock];
@@ -57,6 +60,8 @@
             parameters:parameters
                success:^(AFHTTPRequestOperation *operation, id responseObject) {
                    
+                   NSString *str = [[NSString alloc] initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding];
+                   NSLog(@"%@", str);
                    
                    [self processRespondObject:responseObject
                                   succesBlock:successBlock
@@ -86,21 +91,22 @@
               failuerBlock:(FailureBlock)failureBlock {
     
     NSError *error = nil;
-    
-    if ([NSJSONSerialization isValidJSONObject:object]) {
-        
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:object
-                                                            options:NSJSONReadingMutableContainers
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:object
+                                                            options:NSJSONReadingAllowFragments
                                                               error:&error];
-        
+    
+    
+    if (!error) {
         successBlock(dic);
-        
     }
+    
     else {
-        
         NSLog(@"Can't deserealize object");
         failureBlock(error);
-    }
+    };
+    
+        
+
 }
 
 - (void)validateObject:(BaseServerResponse*)responseObject
