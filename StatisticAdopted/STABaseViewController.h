@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "STAUserDTO.h"
+#import "STAUtilities.h"
 
 
 @interface STABaseViewController : UIViewController

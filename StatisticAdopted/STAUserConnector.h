@@ -13,8 +13,17 @@
 - (void)logIn:(NSDictionary *)parameters successBlock:(SuccessBlock)succesBlock
                                             failBlock:(FailureBlock)failBlock;
 
+
 - (void)logOutWithSuccessBlock:(SuccessBlock)succesBlock
                      failBlock:(FailureBlock)failBlock;
 
+- (void)startTime:(NSDictionary *)parameters
+     successBlock:(SuccessBlock)succesBlock
+        failBlock: (FailureBlock)failBlock;
+
+
+- (void)stopTime:(NSDictionary *)parameters
+    successBlock:(SuccessBlock)succesBlock
+       failBlock: (FailureBlock)failBlock;
 
 @end

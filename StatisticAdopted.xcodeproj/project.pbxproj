@@ -14,6 +14,7 @@
 		4736609F1D35151400B7236C /* STAUserDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4736609A1D35151400B7236C /* STAUserDTO.m */; };
 		47693A181D367D0B00D5234A /* STAStatisticConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47693A171D367D0B00D5234A /* STAStatisticConnector.m */; };
 		47693A1B1D367F4D00D5234A /* STACurrentTimeDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 47693A1A1D367F4D00D5234A /* STACurrentTimeDTO.m */; };
+		47693A1E1D369F2400D5234A /* STAUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 47693A1D1D369F2400D5234A /* STAUtilities.m */; };
 		478A2C971D352BAB009F007A /* STABaseConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 478A2C951D352BAB009F007A /* STABaseConnector.m */; };
 		478A2C981D352BAB009F007A /* STAUserConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 478A2C961D352BAB009F007A /* STAUserConnector.m */; };
 		47F36E8F1D2FE4B50036B950 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F36E8E1D2FE4B50036B950 /* main.m */; };
@@ -61,6 +62,8 @@
 		47693A171D367D0B00D5234A /* STAStatisticConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAStatisticConnector.m; sourceTree = "<group>"; };
 		47693A191D367F4D00D5234A /* STACurrentTimeDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STACurrentTimeDTO.h; sourceTree = "<group>"; };
 		47693A1A1D367F4D00D5234A /* STACurrentTimeDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STACurrentTimeDTO.m; sourceTree = "<group>"; };
+		47693A1C1D369F2400D5234A /* STAUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAUtilities.h; sourceTree = "<group>"; };
+		47693A1D1D369F2400D5234A /* STAUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAUtilities.m; sourceTree = "<group>"; };
 		478A2C931D352BAB009F007A /* STAUserConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAUserConnector.h; sourceTree = "<group>"; };
 		478A2C941D352BAB009F007A /* STABaseConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STABaseConnector.h; sourceTree = "<group>"; };
 		478A2C951D352BAB009F007A /* STABaseConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STABaseConnector.m; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				47F36E901D2FE4B50036B950 /* AppDelegate.h */,
+				47693A1C1D369F2400D5234A /* STAUtilities.h */,
+				47693A1D1D369F2400D5234A /* STAUtilities.m */,
 				47F36E911D2FE4B50036B950 /* AppDelegate.m */,
 				470318781D35509B0001A42A /* Controllers */,
 				470318791D3550AA0001A42A /* Connectors */,
@@ -423,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4736609B1D35151400B7236C /* BaseServerResponse.m in Sources */,
+				47693A1E1D369F2400D5234A /* STAUtilities.m in Sources */,
 				47693A181D367D0B00D5234A /* STAStatisticConnector.m in Sources */,
 				4736609F1D35151400B7236C /* STAUserDTO.m in Sources */,
 				470B6B621D2FF5340003880F /* LoginViewController.m in Sources */,

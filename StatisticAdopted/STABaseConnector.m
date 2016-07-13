@@ -47,7 +47,7 @@
                 
                 NSLog(@"%ld %@", (long)operation.response.statusCode, operation.response.URL);
                 NSLog(@"ResponseString: %@", operation.responseString);
-                NSLog(@"ResponseObject: %@",responseObject);
+//                NSLog(@"ResponseObject: %@",responseObject);
                 
                 [self processRespondObject:responseObject
                                succesBlock:successBlock
@@ -84,7 +84,7 @@
                    
                    NSLog(@"%ld %@", (long)operation.response.statusCode, operation.response.URL);
                    NSLog(@"ResponseString: %@", operation.responseString);
-                   NSLog(@"ResponseObject: %@",responseObject);
+//                   NSLog(@"ResponseObject: %@",responseObject);
                    
                    [self processRespondObject:responseObject
                                   succesBlock:successBlock

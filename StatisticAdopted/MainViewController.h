@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *logOutButton;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
+@property (strong, nonatomic) NSTimer *timer;
+
+- (void)getStatisticInfo;
 
 @end
 
