@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseServerResponse.h"
+#import "STACurrentTimeDTO.h"
 
-@interface STAUserDTO : NSObject
+@interface STAUserDTO : BaseServerResponse
 
 @property(nonatomic, strong) NSString *userName;
 @property(nonatomic, strong) NSString *password;
@@ -16,6 +18,8 @@
 @property(nonatomic, strong) NSString *token;
 @property(nonatomic, strong) NSString *userStatistic;
 @property(nonatomic, strong) NSString *userTime;
+
+@property(nonatomic, strong) STACurrentTimeDTO *currentTime;
 
 + (id)shareInstace;
 - (void)logInserializion:(NSDictionary *)parameters;

@@ -7,10 +7,20 @@
 //
 
 #import "STABaseConnector.h"
-#import "BaseServerResponse.h"
 
 @implementation STABaseConnector
+@synthesize errorHandler;
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        errorHandler = [ErrorHandler new];
+    }
+    return self;
+}
 
 - (void)requestForService:(NSString *)services
            withParameters:(NSDictionary *)parameters
@@ -23,19 +33,21 @@
     self.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     
+    NSString *requestURL = [self buildUrl:services];
     
     switch (method)
     {
         case REQUEST_METHOD_GET:
         {
-            NSLog(@"GET %@", [self buildUrl:services]);
+            NSLog(@"GET %@", requestURL);
             
-            [self GET:[self buildUrl:services]
+            [self GET:requestURL
             parameters:parameters
             success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 
-                NSString *str = [[NSString alloc] initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding];
-                NSLog(@"%@", str);
+                NSLog(@"%ld %@", (long)operation.response.statusCode, operation.response.URL);
+                NSLog(@"ResponseString: %@", operation.responseString);
+                NSLog(@"ResponseObject: %@",responseObject);
                 
                 [self processRespondObject:responseObject
                                succesBlock:successBlock
@@ -44,24 +56,35 @@
             }
             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 
-                NSLog(@"Failure");
+                NSLog(@"%ld %@", (long)operation.response.statusCode, operation.response.URL);
+                NSLog(@"Error: %@ \n ResponseString: %@" , error, operation.responseString);
+
+//                NSString *str = [[NSString alloc] initWithData:(NSData *)operation.responseObject encoding:NSUTF8StringEncoding];
+//                NSLog(@"%@", str);
+//                NSLog(@"%@", error.localizedFailureReason);
+//                NSLog(@"%@", error.userInfo);
+                
+//                [errorHandler handle:error];
+                failureBlock(error);
                 
             }];
-            
             
         }
             break;
             
+            
+            
         case REQUEST_METHOD_POST:
         {
-            NSLog(@"POST %@", [self buildUrl:services]);
+            NSLog(@"POST %@", requestURL);
             
-            [self POST:[self buildUrl:services]
+            [self POST:requestURL
             parameters:parameters
                success:^(AFHTTPRequestOperation *operation, id responseObject) {
                    
-                   NSString *str = [[NSString alloc] initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding];
-                   NSLog(@"%@", str);
+                   NSLog(@"%ld %@", (long)operation.response.statusCode, operation.response.URL);
+                   NSLog(@"ResponseString: %@", operation.responseString);
+                   NSLog(@"ResponseObject: %@",responseObject);
                    
                    [self processRespondObject:responseObject
                                   succesBlock:successBlock
@@ -70,7 +93,15 @@
                }
                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                    
-                   NSLog(@"Failure");
+                   
+                   NSLog(@"%ld %@", (long)operation.response.statusCode, operation.response.URL);
+                   NSLog(@"Error: %@ \n ResponseString: %@" , error, operation.responseString);
+                   
+//                   NSLog(@"%@", operation.responseString);
+//                   NSLog(@"%@", error.localizedFailureReason);
+//                   NSLog(@"%@", error.userInfo);
+                   
+//                   [errorHandler handle:error];
                    failureBlock(error);
                    
                }];
@@ -82,7 +113,6 @@
         default:
             break;
     }
-    
     
 }
 
@@ -98,11 +128,11 @@
     
     if (!error) {
         
-        NSLog(@"Success");
         successBlock(dic);
     }
     
     else {
+        
         NSLog(@"Can't deserealize object");
         failureBlock(error);
     };

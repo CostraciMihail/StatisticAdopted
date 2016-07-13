@@ -18,8 +18,11 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
 
+    self.title = @"Log In";
+    
     self.loginButton.layer.cornerRadius = 10;
     self.userNameTextField.layer.cornerRadius = 10;
     self.passwordTextField.layer.cornerRadius = 10;
@@ -29,6 +32,7 @@
     self.scrollView.showsHorizontalScrollIndicator = YES;
     
     self.userNameTextField.text = @"mcostraci";
+    self.passwordTextField.text = @"Roller.sl92";
     
 }
 
@@ -44,13 +48,16 @@
                            @"password" : self.passwordTextField.text}
             successBlock:^(id object) {
                 
+                user.userName = self.userNameTextField.text;
+                
                 MainViewController *mainVC = [self.mainStoryBoard instantiateViewControllerWithIdentifier:@"MainViewControllerID"];
                 
                 [self.navigationController pushViewController:mainVC animated:YES];
                 
             }
-            failBlock:^(id object) {
+            failBlock:^(NSError *error) {
                 
+                [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
             
                }];
     

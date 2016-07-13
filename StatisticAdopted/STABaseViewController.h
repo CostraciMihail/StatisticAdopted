@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STAUserDTO.h"
+
 
 @interface STABaseViewController : UIViewController
+{
+    STAUserDTO *user;
+
+}
 
 @property(nonatomic, strong) UIStoryboard *mainStoryBoard;
+@property(nonatomic, strong) STAUserDTO *user;
+
+- (void)showAlertViewWithTitle:(NSString *)title
+                    andMessage:(NSString *)message;
 
 @end

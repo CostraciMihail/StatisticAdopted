@@ -1,7 +1,7 @@
 //
 //  BaseServerResponse.h
 //
-//  Copyright (c) 2015 MUUME AG. All rights reserved.
+//  Copyright (c) 2015 Statistic. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

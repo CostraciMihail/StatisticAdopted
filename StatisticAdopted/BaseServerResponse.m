@@ -1,7 +1,7 @@
 //
 //  BaseServerResponse.m
 //
-//  Copyright (c) 2015 MUUME AG. All rights reserved.
+//  Copyright (c) 2015 Statistic. All rights reserved.
 //
 
 #import "BaseServerResponse.h"
@@ -9,6 +9,16 @@
 #import "ErrorHandler.h"
 
 @implementation BaseServerResponse
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+//        statements
+    }
+    return self;
+}
+
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -43,7 +53,6 @@
                                code:[ErrorHandler errorCodeFromString:self.errorString]
                            userInfo:@{NSLocalizedDescriptionKey:self.errorString}];
     
-//    [MuumeUtils localized:self.errorString]
 }
 
 @end

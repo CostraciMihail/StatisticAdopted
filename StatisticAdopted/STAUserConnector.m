@@ -36,10 +36,16 @@
              withParameters:parameters
                      method:REQUEST_METHOD_POST
                 succesBlock:^(NSDictionary *object) {
-                   
-                
+                    
                 [user logInserializion:object];
-
+                    
+                    //validate object is not working
+//                NSError *error = nil;
+//                [self validateObject:user
+//                               error:error
+//                             success:succesBlock
+//                                fail:failBlock];
+                    
                 succesBlock(object);
                     
                 }
@@ -51,9 +57,8 @@
     
 }
 
-- (void)logOut:(NSDictionary *)parameters
- successBlock:(SuccessBlock)succesBlock
-    failBlock: (FailureBlock)failBlock
+- (void)logOutWithSuccessBlock:(SuccessBlock)succesBlock
+                     failBlock:(FailureBlock)failBlock
 {
     
     [self requestForService:@"/logout"
@@ -62,12 +67,10 @@
                 succesBlock:^(id object) {
                     
                     
-                    
                     succesBlock(object);
                 }
                failuerBlock:^(id object) {
 
-                   
                    
                    failBlock(object);
                }];
@@ -80,7 +83,7 @@
 {
     
     [self requestForService:[self buildUrl:@"/start"]
-             withParameters:parameters
+             withParameters:@{@"token" : user.token}
                      method:REQUEST_METHOD_POST
                 succesBlock:^(NSDictionary *responseObject) {
                     
@@ -94,8 +97,30 @@
                    
                }];
     
-    
 }
 
+
+- (void)stopTime:(NSDictionary *)parameters
+            successBlock:(SuccessBlock)succesBlock
+               failBlock: (FailureBlock)failBlock
+{
+
+    [self requestForService:[self buildUrl:@"/stop"]
+             withParameters:@{@"token" : user.token}
+                     method:REQUEST_METHOD_POST
+                succesBlock:^(NSDictionary *responseObject) {
+                    
+                    
+                    succesBlock(responseObject);
+                    
+                }
+               failuerBlock:^(NSError *error) {
+                   
+                   failBlock(error);
+                   
+               }];
+    
+
+}
 
 @end

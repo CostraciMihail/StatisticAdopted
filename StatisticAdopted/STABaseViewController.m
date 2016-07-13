@@ -13,13 +13,31 @@
 @end
 
 @implementation STABaseViewController
+@synthesize user;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-
+    user = [STAUserDTO shareInstace];
+    
 }
+
+
+- (void)showAlertViewWithTitle:(NSString *)title
+                    andMessage:(NSString *)message
+{
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil, nil];
+    
+    [alertView show];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

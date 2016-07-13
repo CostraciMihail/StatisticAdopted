@@ -8,6 +8,8 @@
 
 #import <AFNetworking/AFNetworking.h>
 #import <Foundation/Foundation.h>
+#import "BaseServerResponse.h"
+#import "ErrorHandler.h"
 
 
 #define HOST_NAME @"http://192.168.3.145"
@@ -22,15 +24,25 @@ typedef enum : NSUInteger {
 
 
 @interface STABaseConnector : AFHTTPRequestOperationManager
+{
+    ErrorHandler *errorHandler;
+    
+}
 
 typedef void (^SuccessBlock)(id object);
 typedef void (^FailureBlock)(id object);
+@property (nonatomic, strong) ErrorHandler *errorHandler;
 
 - (void)requestForService:(NSString *)services
            withParameters:(NSDictionary *)parameters
                    method:(REQUEST_METHOD)method
               succesBlock:(SuccessBlock)successBlock
              failuerBlock:(FailureBlock)failureBlock;
+
+- (void)validateObject:(BaseServerResponse*)responseObject
+                 error:(NSError*)error
+               success:(SuccessBlock)success
+                  fail:(FailureBlock)fail;
 
 - (NSString *)buildUrl:(NSString *)string;
 

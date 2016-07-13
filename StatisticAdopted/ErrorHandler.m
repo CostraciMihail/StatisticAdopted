@@ -69,30 +69,30 @@
 
 - (void)handle:(NSError *)error
 {
-//    if (error)
-//    {
-//        void(^handler)(NSError *);
-//        
-//        NSLog(@"%i %@",error.code,error.domain);
-//        
-//        for (NSError *key in [handlers allKeys]) {
-//            
-//            id response = error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey];
-//            if ([key.domain isEqualToString:error.domain] && (key.code == error.code || (response && key.code == [response statusCode])))
-//            {
-//                handler = handlers[key];
-//            }
-//        }
-//        
-//        if (handler == nil)
-//        {
-//            handler = self.errorHandler;
-//        }
-//        
-//        if (handler) {
-//            handler(error);
-//        }
-//    }
+    if (error)
+    {
+        void(^handler)(NSError *);
+        
+        NSLog(@"%i %@",error.code,error.domain);
+        
+        for (NSError *key in [handlers allKeys]) {
+            
+            id response = error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey];
+            if ([key.domain isEqualToString:error.domain] && (key.code == error.code || (response && key.code == [response statusCode])))
+            {
+                handler = handlers[key];
+            }
+        }
+        
+        if (handler == nil)
+        {
+            handler = self.errorHandler;
+        }
+        
+        if (handler) {
+            handler(error);
+        }
+    }
 }
 
 

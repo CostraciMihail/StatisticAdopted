@@ -12,7 +12,6 @@
 
 @interface LoginViewController : STABaseViewController<UIScrollViewDelegate>
 
-
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
