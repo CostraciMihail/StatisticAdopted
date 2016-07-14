@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSString *fullName;
 @property (nonatomic, strong) NSString *timeWorked;
 @property (nonatomic, strong) NSString *timeToWork;
-@property (nonatomic, strong) NSString *loggedIn;
+@property (nonatomic, assign) BOOL loggedIn;
 @property (nonatomic, strong) NSString *error;
 
 

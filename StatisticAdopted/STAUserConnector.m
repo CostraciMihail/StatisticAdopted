@@ -82,7 +82,7 @@
         failBlock: (FailureBlock)failBlock
 {
     
-    [self requestForService:[self buildUrl:@"/start"]
+    [self requestForService:@"/start"
              withParameters:@{@"token" : user.token}
                      method:REQUEST_METHOD_POST
                 succesBlock:^(NSDictionary *responseObject) {
@@ -105,7 +105,7 @@
                failBlock: (FailureBlock)failBlock
 {
 
-    [self requestForService:[self buildUrl:@"/stop"]
+    [self requestForService:@"/stop"
              withParameters:@{@"token" : user.token}
                      method:REQUEST_METHOD_POST
                 succesBlock:^(NSDictionary *responseObject) {

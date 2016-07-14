@@ -18,7 +18,7 @@
         
         self.timeWorked = [parameters valueForKey:@"timeWorked"];
         self.timeToWork = [parameters valueForKey:@"timeToWork"];
-        self.loggedIn = [parameters valueForKey:@"loggedIn"];
+        self.loggedIn = (BOOL)[parameters valueForKey:@"loggedIn"];
         self.error = [parameters valueForKey:@"error"];
     }
     return self;

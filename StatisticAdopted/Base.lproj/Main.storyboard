@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="F5R-7w-Pnv">
-                                <rect key="frame" x="0.0" y="-8" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="-8" width="320" height="424"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uX5-4J-Szj" userLabel="Content View">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,7 +94,7 @@
                         <outlet property="passwordTextField" destination="XOk-Wh-lDC" id="v2H-CT-9Cq"/>
                         <outlet property="scrollView" destination="F5R-7w-Pnv" id="F2x-80-3Qa"/>
                         <outlet property="userNameTextField" destination="ZVk-HJ-95m" id="pPZ-SB-2C3"/>
-                        <segue destination="CCA-3L-Suj" kind="show" identifier="openMainView" id="ud4-J0-wHy"/>
+                        <segue destination="CCA-3L-Suj" kind="show" id="vXA-Q8-Het"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMD-bA-BL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,7 +105,6 @@
         <scene sceneID="cHw-hL-mRx">
             <objects>
                 <tabBarController id="CCA-3L-Suj" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="Yvi-R3-EVz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

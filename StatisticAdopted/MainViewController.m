@@ -32,7 +32,8 @@
 
     self.title = @"Time";
     isTimeStarted = NO;
-    [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self changeTitleButtonForTimeStarted:NO];
+    
     userConnector = [STAUserConnector new];
     statisticConnector = [STAStatisticConnector new];
     [self getStatisticInfo];
@@ -65,9 +66,9 @@
     
     
     if (isTimeStarted) {
-        [self startTime];
+        [self stopTime];
     }
-    else [self stopTime];
+    else [self startTime];
     
 }
 
@@ -77,6 +78,7 @@
                 successBlock:^(id object) {
                     
                     isTimeStarted = YES;
+                    [self startTimer];
                     [self changeTitleButtonForTimeStarted:YES];
                     
                 }
@@ -112,6 +114,18 @@
                                 
                                 NSLog(@"%@", user.currentTime.timeWorked);
                                 self.timeLabel.text = user.currentTime.timeWorked;
+                                
+                                if (user.currentTime.loggedIn) {
+                                    
+                                    isTimeStarted = YES;
+                                    [self startTimer];
+                                    [self changeTitleButtonForTimeStarted:YES];
+                                }
+                                else if (!user.currentTime.loggedIn) {
+                                    
+                                    isTimeStarted = NO;
+                                    [self changeTitleButtonForTimeStarted:NO];
+                                }
                                 
                             }
                                failBlock:^(NSError *error) {
@@ -173,7 +187,7 @@
         minutes = 0;
     }
     
-    self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d %02d", hours, minutes, seconds];
+    self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d : %02d", hours, minutes, seconds];
 }
 
 - (void)changeTitleButtonForTimeStarted:(BOOL)isStarted {
