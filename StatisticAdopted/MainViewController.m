@@ -165,9 +165,9 @@
     NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond)
                                                                    fromDate:date];
     
-    hours = components.hour;
-    minutes = components.minute;
-    seconds = components.second;
+    hours = (int)components.hour;
+    minutes = (int)components.minute;
+    seconds = (int)components.second;
     
 }
 

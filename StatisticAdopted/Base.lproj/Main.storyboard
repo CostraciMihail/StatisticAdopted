@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="F5R-7w-Pnv">
-                                <rect key="frame" x="0.0" y="-8" width="320" height="424"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="F5R-7w-Pnv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uX5-4J-Szj" userLabel="Content View">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,15 +54,22 @@
                                             <action selector="loginButtonTouched:" destination="gvk-za-567" eventType="touchUpInside" id="2kP-tJ-ui6"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_winify" translatesAutoresizingMaskIntoConstraints="NO" id="deA-sl-2vf">
+                                        <rect key="frame" x="20" y="20" width="280" height="71"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="mFe-Iv-Vib" firstAttribute="leading" secondItem="F5R-7w-Pnv" secondAttribute="leading" constant="20" id="6mn-bO-g3P"/>
                                     <constraint firstItem="XOk-Wh-lDC" firstAttribute="leading" secondItem="F5R-7w-Pnv" secondAttribute="leading" constant="20" id="7Yx-S0-ery"/>
+                                    <constraint firstAttribute="trailing" secondItem="deA-sl-2vf" secondAttribute="trailing" constant="20" id="8iP-Sk-yai"/>
                                     <constraint firstAttribute="trailing" secondItem="ZVk-HJ-95m" secondAttribute="trailing" constant="20" id="HlN-3b-X4Y"/>
                                     <constraint firstItem="ZVk-HJ-95m" firstAttribute="leading" secondItem="F5R-7w-Pnv" secondAttribute="leading" constant="20" id="Y0A-22-tJg"/>
+                                    <constraint firstItem="ZVk-HJ-95m" firstAttribute="top" secondItem="deA-sl-2vf" secondAttribute="bottom" constant="15" id="Z1e-8t-8K3"/>
+                                    <constraint firstItem="deA-sl-2vf" firstAttribute="leading" secondItem="F5R-7w-Pnv" secondAttribute="leading" constant="20" id="a3M-Ft-Zuh"/>
                                     <constraint firstAttribute="trailing" secondItem="mFe-Iv-Vib" secondAttribute="trailing" constant="20" id="acm-hs-3No"/>
                                     <constraint firstItem="uX5-4J-Szj" firstAttribute="leading" secondItem="F5R-7w-Pnv" secondAttribute="leading" id="fjw-o5-Std"/>
                                     <constraint firstItem="ZVk-HJ-95m" firstAttribute="top" secondItem="F5R-7w-Pnv" secondAttribute="top" constant="106" id="ghA-C6-BiD"/>
+                                    <constraint firstItem="deA-sl-2vf" firstAttribute="top" secondItem="F5R-7w-Pnv" secondAttribute="top" constant="20" id="ha8-0g-X6V"/>
                                     <constraint firstItem="uX5-4J-Szj" firstAttribute="top" secondItem="F5R-7w-Pnv" secondAttribute="top" id="jol-wY-qaj"/>
                                     <constraint firstAttribute="trailing" secondItem="XOk-Wh-lDC" secondAttribute="trailing" constant="20" id="m3A-pz-QrE"/>
                                     <constraint firstItem="XOk-Wh-lDC" firstAttribute="top" secondItem="ZVk-HJ-95m" secondAttribute="bottom" constant="10" id="oin-C3-zEF"/>
@@ -226,4 +233,7 @@
             <point key="canvasLocation" x="670" y="-287"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_winify" width="215" height="59"/>
+    </resources>
 </document>
