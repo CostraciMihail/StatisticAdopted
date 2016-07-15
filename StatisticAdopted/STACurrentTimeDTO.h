@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "STAUtilities.h"
+
 
 @interface STACurrentTimeDTO : NSObject
 
 @property (nonatomic, strong) NSString *fullName;
 @property (nonatomic, strong) NSString *timeWorked;
 @property (nonatomic, strong) NSString *timeToWork;
-@property (nonatomic, assign) BOOL loggedIn;
+@property  LOGED_IN loggedIn;
 @property (nonatomic, strong) NSString *error;
 
 

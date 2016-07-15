@@ -36,15 +36,21 @@
     
     userConnector = [STAUserConnector new];
     statisticConnector = [STAStatisticConnector new];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear: animated];
     [self getStatisticInfo];
 
-    
 }
 
 - (IBAction)logOutButtonPressed:(id)sender {
  
     [userConnector logOutWithSuccessBlock:^(id object) {
         
+        [self.timer invalidate];
         [self showAlertViewWithTitle:@"Log Out" andMessage:@"Success"];
         [self.navigationController popViewControllerAnimated:YES];
         
@@ -96,6 +102,7 @@
                successBlock:^(id object) {
                    
                    isTimeStarted = NO;
+                   [self.timer invalidate];
                    [self changeTitleButtonForTimeStarted:NO];
                    
                }
@@ -113,17 +120,18 @@
                                 user.currentTime = [[STACurrentTimeDTO alloc] initWithJSONdict:object];
                                 
                                 NSLog(@"%@", user.currentTime.timeWorked);
-                                self.timeLabel.text = user.currentTime.timeWorked;
+//                                self.timeLabel.text = user.currentTime.timeWorked;
                                 
-                                if (user.currentTime.loggedIn) {
+                                if (user.currentTime.loggedIn == LOGED_IN_TRUE) {
                                     
                                     isTimeStarted = YES;
                                     [self startTimer];
                                     [self changeTitleButtonForTimeStarted:YES];
                                 }
-                                else if (!user.currentTime.loggedIn) {
+                                if (user.currentTime.loggedIn == LOGED_IN_FALSE) {
                                     
                                     isTimeStarted = NO;
+                                    [self.timer invalidate];
                                     [self changeTitleButtonForTimeStarted:NO];
                                 }
                                 

@@ -12,6 +12,12 @@
 #define segueIdentifierOpenLoginView @"showLogInViewSegue"
 #define segueIdentifierOpenMainView @"openMainView"
 
+typedef enum : NSUInteger {
+    
+    LOGED_IN_FALSE,
+    LOGED_IN_TRUE
+    
+} LOGED_IN;
 
 @interface STAUtilities : NSObject
 
