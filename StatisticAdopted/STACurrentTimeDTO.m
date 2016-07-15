@@ -18,14 +18,7 @@
         
         self.timeWorked = [parameters valueForKey:@"timeWorked"];
         self.timeToWork = [parameters valueForKey:@"timeToWork"];
-        
-        NSLog(@"%@", [parameters valueForKey:@"loggedIn"]);
-        
         self.loggedIn = [self getTimeState:[parameters valueForKey:@"loggedIn"]];
-        
-        NSLog(@"%lu", (unsigned long)self.loggedIn);
-        
-        
         self.error = [parameters valueForKey:@"error"];
     }
     return self;
@@ -36,11 +29,12 @@
     
     NSNumber *tmp = state;
     
-    if (tmp == 0)
+    if ([tmp isEqual:@0])
         return LOGED_IN_FALSE;
-    
-    return LOGED_IN_TRUE;
-    
+
+    else  {
+        return LOGED_IN_TRUE;
+    }
 }
 
 @end

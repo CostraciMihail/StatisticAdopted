@@ -118,9 +118,7 @@
                             successBlock:^(NSDictionary *object) {
                                 
                                 user.currentTime = [[STACurrentTimeDTO alloc] initWithJSONdict:object];
-                                
-                                NSLog(@"%@", user.currentTime.timeWorked);
-//                                self.timeLabel.text = user.currentTime.timeWorked;
+                                self.timeLabel.text = user.currentTime.timeWorked;
                                 
                                 if (user.currentTime.loggedIn == LOGED_IN_TRUE) {
                                     
