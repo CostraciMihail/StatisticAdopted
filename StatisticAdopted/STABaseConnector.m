@@ -120,22 +120,27 @@
                succesBlock:(SuccessBlock)successBlock
               failuerBlock:(FailureBlock)failureBlock {
     
+ 
+    
+
     NSError *error = nil;
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:object
+
+    @try
+    {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:object
                                                             options:NSJSONReadingAllowFragments
                                                               error:&error];
-    
-    
-    if (!error) {
         
-        successBlock(dic);
+        if (!error) { successBlock(dic); }
+        else { failureBlock(error); }
     }
-    
-    else {
+    @catch (NSException *exception) {
         
         NSLog(@"Can't deserealize object");
         failureBlock(error);
-    };
+        
+//        failureBlock([MuumeUtils uknownError:@"Can't deserealize object"]);
+    }
     
 }
 
