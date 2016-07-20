@@ -28,27 +28,28 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZVk-HJ-95m">
-                                        <rect key="frame" x="20" y="106" width="280" height="30"/>
+                                        <rect key="frame" x="20" y="106" width="280" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Nyw-9o-cZi"/>
+                                            <constraint firstAttribute="height" constant="40" id="Nyw-9o-cZi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XOk-Wh-lDC">
-                                        <rect key="frame" x="20" y="146" width="280" height="30"/>
+                                        <rect key="frame" x="20" y="166" width="280" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="hbB-bf-YSQ"/>
+                                            <constraint firstAttribute="height" constant="40" id="hbB-bf-YSQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFe-Iv-Vib">
-                                        <rect key="frame" x="20" y="186" width="280" height="32"/>
+                                        <rect key="frame" x="20" y="226" width="280" height="41"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="91Y-SG-zcE"/>
+                                            <constraint firstAttribute="height" constant="40" id="91Y-SG-zcE"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="Log in"/>
                                         <connections>
                                             <action selector="loginButtonTouched:" destination="gvk-za-567" eventType="touchUpInside" id="2kP-tJ-ui6"/>
@@ -72,9 +73,9 @@
                                     <constraint firstItem="deA-sl-2vf" firstAttribute="top" secondItem="F5R-7w-Pnv" secondAttribute="top" constant="20" id="ha8-0g-X6V"/>
                                     <constraint firstItem="uX5-4J-Szj" firstAttribute="top" secondItem="F5R-7w-Pnv" secondAttribute="top" id="jol-wY-qaj"/>
                                     <constraint firstAttribute="trailing" secondItem="XOk-Wh-lDC" secondAttribute="trailing" constant="20" id="m3A-pz-QrE"/>
-                                    <constraint firstItem="XOk-Wh-lDC" firstAttribute="top" secondItem="ZVk-HJ-95m" secondAttribute="bottom" constant="10" id="oin-C3-zEF"/>
+                                    <constraint firstItem="XOk-Wh-lDC" firstAttribute="top" secondItem="ZVk-HJ-95m" secondAttribute="bottom" constant="20" id="oin-C3-zEF"/>
                                     <constraint firstAttribute="bottom" secondItem="uX5-4J-Szj" secondAttribute="bottom" constant="460" id="p7L-r2-EQh"/>
-                                    <constraint firstItem="mFe-Iv-Vib" firstAttribute="top" secondItem="XOk-Wh-lDC" secondAttribute="bottom" constant="10" id="tgX-Mc-jv9"/>
+                                    <constraint firstItem="mFe-Iv-Vib" firstAttribute="top" secondItem="XOk-Wh-lDC" secondAttribute="bottom" constant="20" id="tgX-Mc-jv9"/>
                                     <constraint firstAttribute="trailing" secondItem="uX5-4J-Szj" secondAttribute="trailing" constant="320" id="wJk-cO-pNi"/>
                                 </constraints>
                             </scrollView>
@@ -151,12 +152,15 @@
         <scene sceneID="MVt-Lh-bCW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TlF-MB-TTz" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Shi-kn-GSk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="AgA-bP-MwH">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="gvk-za-567" kind="relationship" relationship="rootViewController" id="bOw-65-yYk"/>
                     </connections>
@@ -177,50 +181,56 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-bS-P3Y">
-                                <rect key="frame" x="14" y="229" width="280" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-bS-P3Y">
+                                <rect key="frame" x="20" y="185" width="280" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Wdj-0g-dXo"/>
+                                    <constraint firstAttribute="height" constant="41" id="Wdj-0g-dXo"/>
                                 </constraints>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.18995418850000001" green="0.18995418850000001" blue="0.18995418850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="startStopButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAK-e1-qMk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tea-0b-nK5">
-                                <rect key="frame" x="31" y="15" width="73" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tea-0b-nK5">
+                                <rect key="frame" x="16" y="14" width="73" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="cZg-WC-a8L"/>
-                                    <constraint firstAttribute="height" constant="43" id="iZw-BL-6bQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="iZw-BL-6bQ"/>
                                 </constraints>
-                                <state key="normal" title="Log Out"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.18995418850000001" green="0.18995418850000001" blue="0.18995418850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wog-gL-wsd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXg-EN-W33">
-                                <rect key="frame" x="20" y="90" width="268" height="89"/>
+                                <rect key="frame" x="20" y="66" width="268" height="69"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="89" id="LpX-Pd-KoU"/>
+                                    <constraint firstAttribute="height" constant="69" id="LpX-Pd-KoU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="FUw-bS-P3Y" secondAttribute="trailing" constant="26" id="Bxi-8J-Jfs"/>
-                            <constraint firstItem="Tea-0b-nK5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="Gdi-aA-lc3"/>
+                            <constraint firstAttribute="trailing" secondItem="FUw-bS-P3Y" secondAttribute="trailing" constant="20" id="Bxi-8J-Jfs"/>
+                            <constraint firstItem="Tea-0b-nK5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="Gdi-aA-lc3"/>
                             <constraint firstAttribute="trailing" secondItem="dXg-EN-W33" secondAttribute="trailing" constant="32" id="YDQ-5p-O6e"/>
-                            <constraint firstItem="Tea-0b-nK5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="bUC-hA-Fwm"/>
+                            <constraint firstItem="Tea-0b-nK5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bUC-hA-Fwm"/>
                             <constraint firstItem="dXg-EN-W33" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="n96-rL-v5v"/>
-                            <constraint firstItem="FUw-bS-P3Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="14" id="oIC-LK-5F6"/>
-                            <constraint firstItem="dXg-EN-W33" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="qqX-32-ICe"/>
+                            <constraint firstItem="FUw-bS-P3Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="oIC-LK-5F6"/>
+                            <constraint firstItem="dXg-EN-W33" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="qqX-32-ICe"/>
                             <constraint firstItem="FUw-bS-P3Y" firstAttribute="top" secondItem="dXg-EN-W33" secondAttribute="bottom" constant="50" id="zA3-jQ-OLn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Time" id="NKi-I1-Mgz"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="logOutButton" destination="Tea-0b-nK5" id="VaP-Ln-s5N"/>

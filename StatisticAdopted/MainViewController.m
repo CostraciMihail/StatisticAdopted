@@ -26,13 +26,23 @@
 
 @implementation MainViewController
 
+#pragma MARK - View Cycle
+#pragma MARK -
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 
     self.title = @"Time";
     isTimeStarted = NO;
+    self.startStopButton.layer.cornerRadius = 10;
     [self changeTitleButtonForTimeStarted:NO];
+    
+//    UIBarButtonItem *logOutItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out"
+//                                                                  style:UIBarButtonItemStyleBordered
+//                                                                 target:self
+//                                                                 action:@selector(logOut)];
+    
     
     userConnector = [STAUserConnector new];
     statisticConnector = [STAStatisticConnector new];
@@ -46,9 +56,16 @@
 
 }
 
+#pragma MARK - Actions
+#pragma MARK -
+
 - (IBAction)logOutButtonPressed:(id)sender {
  
+    [self disableUserIteraction];
+    
     [userConnector logOutWithSuccessBlock:^(id object) {
+        
+        [self enableUserIteraction];
         
         [self.timer invalidate];
         [self showAlertViewWithTitle:@"Log Out" andMessage:@"Success"];
@@ -57,6 +74,7 @@
     }
     failBlock:^(NSError *error) {
         
+        [self enableUserIteraction];
         [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
 
     }];
@@ -78,19 +96,26 @@
     
 }
 
+#pragma MARK - Requests
+#pragma MARK -
+
 - (void)startTime {
+    
+    [self disableUserIteraction];
     
     [userConnector startTime:@{@"token" : user.token}
                 successBlock:^(id object) {
                     
+                    [self enableUserIteraction];
+                    
                     isTimeStarted = YES;
                     [self startTimer];
                     [self changeTitleButtonForTimeStarted:YES];
+                  
                     
-                }
-                   failBlock:^(NSError *error) {
+                } failBlock:^(NSError *error) {
                        
-                       
+                    [self enableUserIteraction];
                        
                    }];
     
@@ -98,8 +123,12 @@
 
 - (void)stopTime {
     
+    [self disableUserIteraction];
+    
     [userConnector stopTime:@{@"token" : user.token}
                successBlock:^(id object) {
+                   
+                   [self enableUserIteraction];
                    
                    isTimeStarted = NO;
                    [self.timer invalidate];
@@ -107,15 +136,20 @@
                    
                }
                 failBlock:^(id object) {
-                      
+                   
+                    [self enableUserIteraction];
                  }];
     
 }
 
 - (void)getStatisticInfo {
     
+    [self disableUserIteraction];
+    
     [statisticConnector getStatisticInfo:@{@"username" : user.userName}
                             successBlock:^(NSDictionary *object) {
+                                
+                                [self enableUserIteraction];
                                 
                                 user.currentTime = [[STACurrentTimeDTO alloc] initWithJSONdict:object];
                                 self.timeLabel.text = user.currentTime.timeWorked;
@@ -136,14 +170,16 @@
                             }
                                failBlock:^(NSError *error) {
                                 
+                                   [self enableUserIteraction];
                                    [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
                                }];
     
 }
 
 
-//MARK: Time
-//MARK:
+#pragma MARK - Time
+#pragma MARK -
+
 - (void)startTimer {
     
     [self setHourMinuteSecondFromTimeWorked];
@@ -198,17 +234,18 @@
 
 - (void)changeTitleButtonForTimeStarted:(BOOL)isStarted {
     
-    if  (isStarted)
-    {
+    if  (isStarted) {
+        
         isTimeStarted = isStarted;
         [self.startStopButton setTitle:@"Stop Time" forState:UIControlStateNormal];
-        self.startStopButton.backgroundColor = [UIColor redColor];
+         self.startStopButton.backgroundColor = [UIColor redColor];
         
     } else {
         
         isTimeStarted = isStarted;
         [self.startStopButton setTitle:@"Start Time" forState:UIControlStateNormal];
         self.startStopButton.backgroundColor = [UIColor greenColor];
+
     }
 }
 

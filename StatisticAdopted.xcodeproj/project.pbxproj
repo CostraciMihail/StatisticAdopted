@@ -194,9 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				47F36E901D2FE4B50036B950 /* AppDelegate.h */,
+				47F36E911D2FE4B50036B950 /* AppDelegate.m */,
 				47693A1C1D369F2400D5234A /* STAUtilities.h */,
 				47693A1D1D369F2400D5234A /* STAUtilities.m */,
-				47F36E911D2FE4B50036B950 /* AppDelegate.m */,
 				470318781D35509B0001A42A /* Controllers */,
 				470318791D3550AA0001A42A /* Connectors */,
 				4703187A1D3550B30001A42A /* DTO's */,

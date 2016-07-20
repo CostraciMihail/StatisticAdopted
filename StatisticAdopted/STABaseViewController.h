@@ -20,6 +20,8 @@
 @property(nonatomic, strong) UIStoryboard *mainStoryBoard;
 @property(nonatomic, strong) STAUserDTO *user;
 
+- (void)disableUserIteraction;
+- (void)enableUserIteraction;
 - (void)showAlertViewWithTitle:(NSString *)title
                     andMessage:(NSString *)message;
 

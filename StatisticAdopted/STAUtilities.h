@@ -12,6 +12,9 @@
 #define segueIdentifierOpenLoginView @"showLogInViewSegue"
 #define segueIdentifierOpenMainView @"openMainView"
 
+#define screenBounds [UIScreen mainScreen].bounds
+
+
 typedef enum : NSUInteger {
     
     LOGED_IN_FALSE,

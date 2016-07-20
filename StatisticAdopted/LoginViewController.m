@@ -42,25 +42,26 @@
 //    {@"username" : self.userNameTextField.text,
 //        @"password" : self.passwordTextField.text}
     
+    [self disableUserIteraction];
     
     STAUserConnector *userConnector = [STAUserConnector new];
     [userConnector logIn:@{@"username" : @"mcostraci",
                            @"password" : self.passwordTextField.text}
             successBlock:^(id object) {
                 
+                [self enableUserIteraction];
                 user.userName = self.userNameTextField.text;
                 
                 MainViewController *mainVC = [self.mainStoryBoard instantiateViewControllerWithIdentifier:@"MainViewControllerID"];
-                
                 [self.navigationController pushViewController:mainVC animated:YES];
                 
             }
             failBlock:^(NSError *error) {
                 
+                [self enableUserIteraction];
                 [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
             
                }];
-    
     
 }
 
