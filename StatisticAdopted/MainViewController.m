@@ -35,14 +35,19 @@
 
     self.title = @"Time";
     isTimeStarted = NO;
+    
     self.startStopButton.layer.cornerRadius = 10;
     [self changeTitleButtonForTimeStarted:NO];
+    [self.logOutButton setBackgroundColor:[UIColor grayColor]];
+    
+    
+    self.navigationItem.title = @"Log Out";
+    self.navigationController.navigationBarHidden = YES;
     
 //    UIBarButtonItem *logOutItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out"
 //                                                                  style:UIBarButtonItemStyleBordered
 //                                                                 target:self
 //                                                                 action:@selector(logOut)];
-    
     
     userConnector = [STAUserConnector new];
     statisticConnector = [STAStatisticConnector new];

@@ -178,7 +178,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-bS-P3Y">
@@ -193,20 +193,6 @@
                                     <action selector="startStopButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAK-e1-qMk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tea-0b-nK5">
-                                <rect key="frame" x="16" y="14" width="73" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="cZg-WC-a8L"/>
-                                    <constraint firstAttribute="height" constant="44" id="iZw-BL-6bQ"/>
-                                </constraints>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" red="0.18995418850000001" green="0.18995418850000001" blue="0.18995418850000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wog-gL-wsd"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXg-EN-W33">
                                 <rect key="frame" x="20" y="66" width="268" height="69"/>
                                 <constraints>
@@ -216,13 +202,26 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tea-0b-nK5">
+                                <rect key="frame" x="219" y="14" width="73" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="cZg-WC-a8L"/>
+                                    <constraint firstAttribute="height" constant="44" id="iZw-BL-6bQ"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.18995418850000001" green="0.18995418850000001" blue="0.18995418850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wog-gL-wsd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="FUw-bS-P3Y" secondAttribute="trailing" constant="20" id="Bxi-8J-Jfs"/>
                             <constraint firstItem="Tea-0b-nK5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="Gdi-aA-lc3"/>
                             <constraint firstAttribute="trailing" secondItem="dXg-EN-W33" secondAttribute="trailing" constant="32" id="YDQ-5p-O6e"/>
-                            <constraint firstItem="Tea-0b-nK5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bUC-hA-Fwm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tea-0b-nK5" secondAttribute="trailing" constant="12" id="hS1-mb-1km"/>
                             <constraint firstItem="dXg-EN-W33" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="n96-rL-v5v"/>
                             <constraint firstItem="FUw-bS-P3Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="oIC-LK-5F6"/>
                             <constraint firstItem="dXg-EN-W33" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="qqX-32-ICe"/>
@@ -230,7 +229,8 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Time" id="NKi-I1-Mgz"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="logOutButton" destination="Tea-0b-nK5" id="VaP-Ln-s5N"/>
