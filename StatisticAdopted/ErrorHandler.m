@@ -73,7 +73,7 @@
     {
         void(^handler)(NSError *);
         
-        NSLog(@"%i %@",error.code,error.domain);
+        NSLog(@"%li %@", (long)error.code, error.domain);
         
         for (NSError *key in [handlers allKeys]) {
             
