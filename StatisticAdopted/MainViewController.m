@@ -39,6 +39,8 @@
     self.startStopButton.layer.cornerRadius = 10;
     [self changeTitleButtonForTimeStarted:NO];
     self.logOutButton.layer.cornerRadius = 10;
+    [self.logOutButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.logOutButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     
     self.navigationController.navigationBarHidden = YES;
     
