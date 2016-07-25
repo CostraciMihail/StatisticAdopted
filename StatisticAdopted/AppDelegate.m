@@ -40,8 +40,13 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     
-//    MainViewController *mainVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewControllerID"];
-//    [mainVC.timer invalidate];
+    UIViewController *visibleVC = [self getVisibleViewControllerForClass];
+    
+    if ([visibleVC isKindOfClass:[MainViewController class]]) {
+        
+        MainViewController *mainVC = (MainViewController *)visibleVC;
+        [mainVC.timer invalidate];
+    }
     
 }
 
@@ -55,15 +60,15 @@
 //    MainViewController *mainVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewControllerID"];
 //    [mainVC getStatisticInfo];
     
-//    NSString *strClass = NSStringFromClass([MainViewController class]);
-//    
-//    id vc = [self getVisibleViewControllerForClass: strClass];
-//    
-//    MainViewController *visibleVC = (MainViewController*)vc;
-//    
-//    if (visibleVC) {
-//        [visibleVC getStatisticInfo];
-//    }
+
+    UIViewController *visibleVC = [self getVisibleViewControllerForClass];
+
+    if ([visibleVC isKindOfClass:[MainViewController class]]) {
+        
+        MainViewController *mainVC = (MainViewController *)visibleVC;
+        [mainVC getStatisticInfo];
+    }
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -71,31 +76,30 @@
 }
 
 
-- (UIViewController*)getVisibleViewControllerForClass: (NSString *)className {
-    
-    NSLog(@"%@", window);
+- (UIViewController*)getVisibleViewControllerForClass {
     
     UINavigationController *navC = (UINavigationController*)window.rootViewController;
     NSLog(@"%@", navC.visibleViewController);
-    
-    if ((UITabBarController*)navC.visibleViewController) {
-        
-        UITabBarController *tabBAr = (UITabBarController*)navC.visibleViewController;
-        
-        if ([tabBAr isKindOfClass:[MainViewController class]]) {
-            
-            UIViewController *activeVC = tabBAr.selectedViewController;
-            
-            if ( [NSStringFromClass([activeVC class]) isEqualToString:className]) {
-                return activeVC;
-            }
-        }
-        
-      
-    }
 
-    return  nil;
-        
+    return navC.visibleViewController;
+  
+    
+//    if ((UITabBarController*)navC.visibleViewController) {
+//        
+//        UITabBarController *tabBAr = (UITabBarController*)navC.visibleViewController;
+//        
+//        if ([tabBAr isKindOfClass:[MainViewController class]]) {
+//            
+//            UIViewController *activeVC = tabBAr.selectedViewController;
+//            
+//            if ( [NSStringFromClass([activeVC class]) isEqualToString:className]) {
+//                return activeVC;
+//            }
+//        }
+//        
+//      
+//    }
+    
         
         //
 //        if let activeVC = tabBar.selectedViewController {

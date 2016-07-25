@@ -49,7 +49,7 @@
 }
 
 - (void)setUpLoadingView {
-
+    
     bgMask = [[UIView alloc] initWithFrame:screenBounds];
     [bgMask setBackgroundColor:[UIColor grayColor]];
     

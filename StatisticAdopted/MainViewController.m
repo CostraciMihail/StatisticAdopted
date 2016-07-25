@@ -176,8 +176,7 @@
                                     [self changeTitleButtonForTimeStarted:NO];
                                 }
                                 
-                            }
-                               failBlock:^(NSError *error) {
+                            } failBlock:^(NSError *error) {
                                 
                                    [self enableUserIteraction];
                                    [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
