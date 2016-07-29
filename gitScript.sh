@@ -1,4 +1,5 @@
 
+echo "\n"
 echo "*************************"
 echo "git task is executing ..."
 echo "*************************"
