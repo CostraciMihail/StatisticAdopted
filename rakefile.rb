@@ -5,18 +5,14 @@ require 'fileutils'
 task :make_commit_push do 
 
 sh %{ clear }
-
-puts "\n***************************"
 puts "\nmake_commit_and_push in progress ..."
-
 sh %{
-		git add -A
-		git commit -m "Automatic commit"
-		git push 
-	}  
+git add -A
+git commit -m "Automatic commit"
+git push 
+}  
 
 puts "\nmake_commit_and_push completed \n"
-puts "\n *************************** \n"
 end
 
 
