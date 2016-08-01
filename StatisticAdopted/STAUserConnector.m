@@ -22,6 +22,14 @@
         
         user = [STAUserDTO shareInstace];
         
+        __weak __typeof (self)weakSelf = self;
+        [errorHandler addHandler:^(NSError *error) {
+            
+            [weakSelf relogIn:^(id object) { }
+            failBlock:^(id object) { }];
+            
+        } domain:@"NSURLErrorDomain" code:UNAUTHORIZED_WRONG_PASSWORD];
+        
     }
     return self;
 }
@@ -51,6 +59,27 @@
                 }
                failuerBlock:^(NSError *error) {
                    
+                   [errorHandler handle:error];
+                   failBlock(error);
+               }];
+}
+
+- (void)relogIn:(SuccessBlock)succesBlock
+    failBlock:(FailureBlock)failBlock
+{
+    
+    [self requestForService:@"/login"
+             withParameters:@{@"username" : user.userName,
+                              @"password" : user.password}
+                     method:REQUEST_METHOD_POST
+                succesBlock:^(id object) {
+                    
+                    succesBlock(object);
+                    
+                }
+               failuerBlock:^(NSError *error) {
+               
+                   [errorHandler handle:error];
                    failBlock(error);
                    
                }];
@@ -66,13 +95,12 @@
                      method:REQUEST_METHOD_POST
                 succesBlock:^(id object) {
                     
-                    
                     succesBlock(object);
                 }
-               failuerBlock:^(id object) {
+               failuerBlock:^(NSError *error) {
 
-                   
-                   failBlock(object);
+                   [errorHandler handle:error];
+                   failBlock(error);
                }];
     
 }
@@ -93,6 +121,7 @@
                 }
                failuerBlock:^(NSError *error) {
                    
+                   [errorHandler handle:error];
                    failBlock(error);
                    
                }];
@@ -116,6 +145,7 @@
                 }
                failuerBlock:^(NSError *error) {
                    
+                   [errorHandler handle:error];
                    failBlock(error);
                    
                }];

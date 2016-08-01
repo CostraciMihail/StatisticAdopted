@@ -19,17 +19,12 @@
         
         [self addSignoutHandler];
         
+        __weak __typeof__(self) weakSelf = self;
         [self setDefaultHandler:^(NSError *error) {
             
-            NSString *message = (error.localizedDescription);
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UNKNOWN ERROR"
-                                                            message:message
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-            
+            [weakSelf showStandartAlertViewWithTitle:@"UNKNOWN ERROR"
+                                             message:error.localizedDescription
+                                        cancelButton:@"OK"];
         }];
         
         
@@ -38,6 +33,18 @@
             NSLog(@"%@",error);
             
         } domain:@"NSURLErrorDomain" code:OPERATION_COULD_NOT_BE_COMPLETED];
+
+        
+        
+        [self addHandler:^(NSError *error) {
+            
+            NSLog(@"NO INTERNET CONNECTION ");
+            
+            [weakSelf showStandartAlertViewWithTitle:@"Fail to Connect!"
+                                             message:@"Connection is lost. Please check your internet connection."
+                                        cancelButton:@"OK"];
+            
+        } domain:@"NSURLErrorDomain" code:NO_INTERNET_CONNECTION];
         
     }
     return self;
@@ -107,21 +114,34 @@
             return LOGIN_FAILED;
         if ([errorString isEqualToString:@"UNAUTHORIZED"])
             return UNAUTHORIZED;
-        if ([errorString isEqualToString:@"PHONE_WRONG_FORMAT"])
-            return PHONE_WRONG_FORMAT;
         if ([errorString isEqualToString:@"PASSWORD_IS_REQUIRED"])
             return PASSWORD_IS_REQUIRED;
         if ([errorString isEqualToString:@"WRONG_PASSWORD"])
             return WRONG_PASSWORD;
-        if ([errorString isEqualToString:@"USER_NOT_AUTHORIZED"])
-            return USER_NOT_AUTHORIZED;
         if ([errorString isEqualToString:@"UNAUTHORIZED_WRONG_PASSWORD"])
             return UNAUTHORIZED_WRONG_PASSWORD;
+        if ([errorString isEqualToString:@"Could not connect to the server."])
+            return NO_INTERNET_CONNECTION;
+        
         
         
         return UNKNOWN_ERROR;
     }
     @catch (NSException *exception) { return UNKNOWN_ERROR; }
+    
+}
+
+
+- (void)showStandartAlertViewWithTitle:(NSString *)title
+                               message:(NSString *)message
+                          cancelButton:(NSString *)cancelButtonTitle
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:cancelButtonTitle
+                                          otherButtonTitles:nil];
+    [alert show];
     
 }
 

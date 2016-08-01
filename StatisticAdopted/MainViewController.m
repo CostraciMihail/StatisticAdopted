@@ -26,8 +26,8 @@
 
 @implementation MainViewController
 
-#pragma MARK - View Cycle
-#pragma MARK -
+#pragma mark - View Cycle
+#pragma mark -
 
 - (void)viewDidLoad {
     
@@ -57,6 +57,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear: animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(autoLogIn)
+                                                 name:@"UNAUTHORIZED"
+                                               object:nil];
     [self getStatisticInfo];
 
 }
@@ -67,8 +71,8 @@
     [self.timer invalidate];
 }
 
-#pragma MARK - Actions
-#pragma MARK -
+#pragma mark - Actions
+#pragma mark -
 
 - (IBAction)logOutButtonPressed:(id)sender {
  
@@ -86,7 +90,7 @@
     failBlock:^(NSError *error) {
         
         [self enableUserIteraction];
-        [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
+//        [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
 
     }];
     
@@ -107,8 +111,8 @@
     
 }
 
-#pragma MARK - Requests
-#pragma MARK -
+#pragma mark - Requests
+#pragma mark -
 
 - (void)startTime {
     
@@ -186,9 +190,15 @@
     
 }
 
+- (void)autoLogIn {
+    
+//    [];
+    
+}
 
-#pragma MARK - Time
-#pragma MARK -
+
+#pragma mark - Time
+#pragma mark -
 
 - (void)startTimer {
     

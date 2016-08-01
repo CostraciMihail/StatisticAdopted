@@ -64,7 +64,6 @@
 //                NSLog(@"%@", error.localizedFailureReason);
 //                NSLog(@"%@", error.userInfo);
                 
-//                [errorHandler handle:error];
                 failureBlock(error);
                 
             }];
@@ -101,7 +100,6 @@
 //                   NSLog(@"%@", error.localizedFailureReason);
 //                   NSLog(@"%@", error.userInfo);
                    
-//                   [errorHandler handle:error];
                    failureBlock(error);
                    
                }];

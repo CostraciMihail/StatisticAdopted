@@ -1,1 +1,4 @@
-fsdfdsfdsf sds
+-rw-r--r--   1 winify  staff    20 Aug  1 15:27 new
+-rw-r--r--   1 winify  staff   276 Aug  1 15:19 gitScript.sh
+-rw-r--r--   1 winify  staff   441 Aug  1 15:18 rakefile.rb
+-rw-r--r--   1 winify  staff  1018 Aug  1 15:57 fileTwo.txt

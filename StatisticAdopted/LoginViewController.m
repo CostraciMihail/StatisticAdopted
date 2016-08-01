@@ -65,7 +65,6 @@
             failBlock:^(NSError *error) {
                 
                 [self enableUserIteraction];
-                [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
             
                }];
     
