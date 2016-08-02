@@ -7,6 +7,7 @@
 //
 
 #import "STABaseConnector.h"
+#import "STAUtilities.h"
 
 @implementation STABaseConnector
 @synthesize errorHandler;
@@ -165,6 +166,13 @@
 - (void)cancelAllRequests {
     
     [self.operationQueue cancelAllOperations];
+}
+
+- (void)dealloc {
+    
+    if(showDealloc) {
+        NSLog(@"%@", self);
+    }
 }
 
 

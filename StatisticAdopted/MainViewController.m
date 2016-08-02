@@ -39,16 +39,18 @@
     
     self.startStopButton.layer.cornerRadius = 10;
     [self changeTitleButtonForTimeStarted:NO];
-    self.logOutButton.layer.cornerRadius = 10;
-    [self.logOutButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.logOutButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     
-    self.navigationController.navigationBarHidden = YES;
+    UIBarButtonItem *logOutItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out"
+                                                                  style:UIBarButtonItemStyleBordered
+                                                                 target:self
+                                                                 action:@selector(logOut)];
     
-//    UIBarButtonItem *logOutItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out"
-//                                                                  style:UIBarButtonItemStyleBordered
-//                                                                 target:self
-//                                                                 action:@selector(logOut)];
+    UIBarButtonItem *updateItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                target:self
+                                                                                action:@selector(getStatisticInfo)];
+    
+    [self.navigationItem setLeftBarButtonItem:logOutItem animated:YES];
+    [self.navigationItem setRightBarButtonItem:updateItem animated:YES];
     
     userConnector = [STAUserConnector new];
     statisticConnector = [STAStatisticConnector new];
@@ -76,8 +78,8 @@
 #pragma mark - Actions
 #pragma mark -
 
-- (IBAction)logOutButtonPressed:(id)sender {
- 
+- (void)logOut {
+    
     [self disableUserIteraction];
     
     [userConnector logOutWithSuccessBlock:^(id object) {
@@ -87,17 +89,12 @@
         [self showAlertViewWithTitle:@"Log Out" andMessage:@"Success"];
         [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UNAUTHORIZED" object:nil];
         [self.navigationController popViewControllerAnimated:YES];
-
+        
         
     } failBlock:^(NSError *error) {
         
         [self enableUserIteraction];
     }];
-    
-}
-
-- (void)logOut {
-    
     
 }
 
@@ -171,6 +168,7 @@
                                 if (user.currentTime.loggedIn == LOGED_IN_TRUE) {
                                     
                                     isTimeStarted = YES;
+                                    [self.timer invalidate];
                                     [self startTimer];
                                     [self changeTitleButtonForTimeStarted:YES];
                                 }
@@ -190,6 +188,13 @@
 
 - (void)autoLogOut {
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You will be signed out"
+                                                    message:@"Your session doesn't longer exist. For security reason you will be signout."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -206,8 +211,6 @@
                                            selector:@selector(updateTime)
                                            userInfo:nil
                                             repeats:true];
-    
-    
     [self.timer fire];
 }
 
@@ -264,6 +267,7 @@
 }
 
 - (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

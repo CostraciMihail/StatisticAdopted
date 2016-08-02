@@ -93,6 +93,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    
+    if(showDealloc) {
+        NSLog(@"%@", self);
+    }
+}
+
 /*
 #pragma mark - Navigation
 

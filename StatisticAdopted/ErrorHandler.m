@@ -6,6 +6,7 @@
 
 #import "ErrorHandler.h"
 #import "AFNetworking.h"
+#import "STAUtilities.h"
 
 @implementation ErrorHandler
 @synthesize handlers,errorHandler;
@@ -144,5 +145,13 @@
     [alert show];
     
 }
+
+- (void)dealloc {
+    
+    if(showDealloc) {
+        NSLog(@"%@", self);
+    }
+}
+
 
 @end

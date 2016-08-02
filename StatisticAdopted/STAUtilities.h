@@ -13,7 +13,7 @@
 #define segueIdentifierOpenMainView @"openMainView"
 
 #define screenBounds [UIScreen mainScreen].bounds
-
+#define showDealloc NO
 
 typedef enum : NSUInteger {
     
