@@ -27,6 +27,7 @@
                 }
                failuerBlock:^(NSError *error) {
                    
+                   [errorHandler handle:error];
                    failBlock(error);
                    
                }];

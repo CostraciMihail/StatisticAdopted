@@ -21,6 +21,7 @@
     int hours;
     int minutes;
     int seconds;
+    
 }
 @end
 
@@ -58,7 +59,7 @@
     
     [super viewWillAppear: animated];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(autoLogIn)
+                                             selector:@selector(autoLogOut)
                                                  name:@"UNAUTHORIZED"
                                                object:nil];
     [self getStatisticInfo];
@@ -71,6 +72,7 @@
     [self.timer invalidate];
 }
 
+
 #pragma mark - Actions
 #pragma mark -
 
@@ -81,17 +83,15 @@
     [userConnector logOutWithSuccessBlock:^(id object) {
         
         [self enableUserIteraction];
-        
         [self.timer invalidate];
         [self showAlertViewWithTitle:@"Log Out" andMessage:@"Success"];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UNAUTHORIZED" object:nil];
         [self.navigationController popViewControllerAnimated:YES];
+
         
-    }
-    failBlock:^(NSError *error) {
+    } failBlock:^(NSError *error) {
         
         [self enableUserIteraction];
-//        [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
-
     }];
     
 }
@@ -102,7 +102,6 @@
 }
 
 - (IBAction)startStopButtonTouched:(id)sender {
-    
     
     if (isTimeStarted) {
         [self stopTime];
@@ -185,15 +184,13 @@
                             } failBlock:^(NSError *error) {
                                 
                                    [self enableUserIteraction];
-                                   [self showAlertViewWithTitle:@"Error" andMessage:error.localizedDescription];
                                }];
     
 }
 
-- (void)autoLogIn {
+- (void)autoLogOut {
     
-//    [];
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -237,14 +234,12 @@
     
     seconds += 1;
     
-    if (seconds >= 60)
-    {
+    if (seconds >= 60) {
         minutes += 1;
         seconds = 0;
     }
     
-    if (minutes >= 60)
-    {
+    if (minutes >= 60) {
         hours += 1;
         minutes = 0;
     }
@@ -265,7 +260,6 @@
         isTimeStarted = isStarted;
         [self.startStopButton setTitle:@"Start Time" forState:UIControlStateNormal];
         self.startStopButton.backgroundColor = [UIColor greenColor];
-
     }
 }
 
